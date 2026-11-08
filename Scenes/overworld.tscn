@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dng2w21h2g23u" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
 [ext_resource type="Script" uid="uid://kcu7xi5a0k5h" path="res://Scripts/Character/player.gd" id="2_i8gr5"]
+[ext_resource type="Script" uid="uid://jeinasmxn8kn" path="res://Scripts/Character/character_visual.gd" id="4_s368d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
@@ -18,8 +19,12 @@ tile_set = ExtResource("1_l45s6")
 script = ExtResource("2_i8gr5")
 move_speed = 50.0
 
-[node name="CharacterKnight" type="Sprite2D" parent="Player" unique_id=1921515096]
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1921515096 node_paths=PackedStringArray("character")]
+position = Vector2(0, 7)
 texture = ExtResource("2_6s5ae")
+offset = Vector2(0, -7)
+script = ExtResource("4_s368d")
+character = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=668030420]
 shape = SubResource("CapsuleShape2D_gvo7x")
