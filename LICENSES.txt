@@ -1,0 +1,45 @@
+# Third Party Asset Licenses
+
+Some of the assets provided in this course are subject to third-party licenses:
+
+===================================
+
+Town Sprites
+Created by Kenney
+Source: https://kenney.nl/assets/tiny-town
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+----------
+
+Dungeon Sprites
+Created by Kenney
+Source: https://kenney.nl/assets/tiny-dungeon
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+----------
+
+Shield_Block SFX
+Created by Kenney
+Source: https://www.kenney.nl/assets/impact-sounds
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+----------
+
+Hit SFX
+Created by Independent.nu (submitted by qubodup)
+Source: https://opengameart.org/content/37-hitspunches
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+----------
+
+Attack SFX
+Created by artisticdude
+Source: https://opengameart.org/content/swishes-sound-pack
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+----------
+
+Bow SFX
+Created by Ben Jaszczak & Brian Nelson (submitted by MedicineStorm)
+Source: https://opengameart.org/content/medieval-sound-effects-weapon-textures
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
