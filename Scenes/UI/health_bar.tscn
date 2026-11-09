@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dh7cy76s3unff"]
+
+[ext_resource type="Script" uid="uid://bgfrjwb88317r" path="res://Scripts/UI/health_bar.gd" id="1_qyqjh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvo7x"]
+bg_color = Color(0.22, 0.09878, 0.0946, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1c68"]
+bg_color = Color(0.34117648, 0.13333334, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tncop"]
+bg_color = Color(1, 0.21176471, 0.11372549, 1)
+
+[node name="HealthBar" type="Panel" unique_id=1854990326]
+offset_left = -9.0
+offset_top = -13.0
+offset_right = 9.0
+offset_bottom = -9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvo7x")
+script = ExtResource("1_qyqjh")
+
+[node name="BG" type="Panel" parent="." unique_id=1481377407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1c68")
+
+[node name="Fill" type="Panel" parent="." unique_id=1176808132]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tncop")

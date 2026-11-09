@@ -2,7 +2,7 @@ class_name Character
 extends CharacterBody2D
 
 signal on_take_damage(direction : Vector2)
-signal on_health_change
+signal on_health_changed
 
 @export var current_hp : int = 10
 @export var max_hp : int = 10
@@ -38,7 +38,7 @@ func take_damage(damage : int, force : Vector2):
 		_die()
 	else:
 		on_take_damage.emit(force)
-		on_health_change.emit()
+		on_health_changed.emit()
 
 func _die():
 	pass

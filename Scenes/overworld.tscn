@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_auytq"]
 [ext_resource type="PackedScene" uid="uid://d02c388ubbsvv" path="res://Scenes/Weapons/shield.tscn" id="7_v1c68"]
 [ext_resource type="Script" uid="uid://cxo0q1ghd75ov" path="res://Scripts/Character/enemy_weapons.gd" id="9_auytq"]
+[ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="9_dd6r4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
@@ -52,6 +53,8 @@ script = ExtResource("5_2ngsa")
 weapon_to_equip = ExtResource("6_auytq")
 shield_to_equip = ExtResource("7_v1c68")
 
+[node name="HealthBar" parent="Player" unique_id=1854990326 instance=ExtResource("9_dd6r4")]
+
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1706743145 node_paths=PackedStringArray("target", "weapons")]
 position = Vector2(37, 0)
 script = ExtResource("5_rmeny")
@@ -71,3 +74,5 @@ shape = SubResource("CapsuleShape2D_rmeny")
 position = Vector2(0, 5)
 script = ExtResource("9_auytq")
 weapon_to_equip = ExtResource("6_auytq")
+
+[node name="HealthBar" parent="Enemy" unique_id=1400231474 instance=ExtResource("9_dd6r4")]
