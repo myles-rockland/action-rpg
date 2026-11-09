@@ -31,6 +31,9 @@ func take_damage(damage : int, force : Vector2):
 	
 	if current_hp <= 0:
 		_die()
+	else:
+		on_take_damage.emit(force)
+		on_health_change.emit()
 
 func _die():
 	pass
