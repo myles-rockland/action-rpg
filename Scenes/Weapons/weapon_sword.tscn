@@ -74,6 +74,8 @@ rotation = 1.5707964
 texture = ExtResource("2_g87a1")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1455479740]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=110850782]
 position = Vector2(16.5, 0)

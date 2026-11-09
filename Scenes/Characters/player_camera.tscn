@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://charwn474fq2t"]
+
+[ext_resource type="Script" uid="uid://cmt1hbsgfdgkm" path="res://Scripts/Character/camera_controller.gd" id="1_bpwmn"]
+
+[node name="PlayerCamera" type="Camera2D" unique_id=591880367 node_paths=PackedStringArray("target")]
+zoom = Vector2(4, 4)
+script = ExtResource("1_bpwmn")
+target = NodePath("")

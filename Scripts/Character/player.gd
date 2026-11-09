@@ -6,3 +6,6 @@ func _process(delta):
 	
 	var mouse_pos : Vector2 = get_global_mouse_position()
 	look_direction = global_position.direction_to(mouse_pos)
+
+func _die():
+	get_tree().reload_current_scene()

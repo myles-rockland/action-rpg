@@ -12,9 +12,9 @@
 radius = 6.0
 height = 16.0
 
-[node name="Base_Enemy" type="CharacterBody2D" unique_id=795717158 node_paths=PackedStringArray("target", "weapons")]
+[node name="Base_Enemy" type="CharacterBody2D" unique_id=795717158 node_paths=PackedStringArray("weapons")]
+collision_layer = 2
 script = ExtResource("1_3qhml")
-target = NodePath("")
 stop_distance = 20.0
 weapons = NodePath("EnemyWeapons")
 damaged_sound = ExtResource("2_5qu4x")
