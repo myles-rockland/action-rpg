@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cxm36ce2ufyib"]
+
+[ext_resource type="PackedScene" uid="uid://b1vlwee45q5vv" path="res://Scenes/Characters/Enemies/base_enemy.tscn" id="1_3v2pe"]
+[ext_resource type="Texture2D" uid="uid://delaw40asu4s2" path="res://Sprites/Characters/Character_Cyclops.tres" id="2_jrxit"]
+[ext_resource type="PackedScene" uid="uid://cbldek65c14eg" path="res://Scenes/Weapons/weapon_axe.tscn" id="3_qguem"]
+
+[node name="Axe_Enemy" unique_id=795717158 instance=ExtResource("1_3v2pe")]
+stop_distance = 25.0
+weight = 2.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=675061152]
+texture = ExtResource("2_jrxit")
+
+[node name="EnemyWeapons" parent="." index="2" unique_id=1393475569]
+weapon_to_equip = ExtResource("3_qguem")

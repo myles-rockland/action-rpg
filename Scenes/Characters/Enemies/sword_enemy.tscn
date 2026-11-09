@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://pc0ovv88boy7"]
+
+[ext_resource type="PackedScene" uid="uid://b1vlwee45q5vv" path="res://Scenes/Characters/Enemies/base_enemy.tscn" id="1_0ixc0"]
+
+[node name="Sword_Enemy" unique_id=795717158 instance=ExtResource("1_0ixc0")]
+current_hp = 5
+max_hp = 5
+move_speed = 30.0
