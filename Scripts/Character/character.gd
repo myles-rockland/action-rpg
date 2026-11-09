@@ -26,7 +26,11 @@ func _move(delta : float) -> void:
 	move_and_slide()
 	
 func take_damage(damage : int, force : Vector2):
-	pass
+	current_hp -= damage
+	add_force(force)
+	
+	if current_hp <= 0:
+		_die()
 
 func _die():
 	pass

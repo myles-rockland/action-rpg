@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
 [ext_resource type="Script" uid="uid://kcu7xi5a0k5h" path="res://Scripts/Character/player.gd" id="2_i8gr5"]
 [ext_resource type="Script" uid="uid://jeinasmxn8kn" path="res://Scripts/Character/character_visual.gd" id="4_s368d"]
+[ext_resource type="Script" uid="uid://cmxujg0qlllc" path="res://Scripts/Character/player_weapons.gd" id="5_2ngsa"]
 [ext_resource type="Texture2D" uid="uid://dagt18rdsjnc2" path="res://Sprites/Characters/Character_EvilWizard.tres" id="5_4qj6l"]
 [ext_resource type="Script" uid="uid://djmtsjgl4mhcu" path="res://Scripts/Character/enemy.gd" id="5_rmeny"]
+[ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_auytq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
@@ -37,6 +39,11 @@ character = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=668030420]
 shape = SubResource("CapsuleShape2D_gvo7x")
+
+[node name="PlayerWeapons" type="Node2D" parent="Player" unique_id=1356456564]
+position = Vector2(0, 4)
+script = ExtResource("5_2ngsa")
+weapon_to_equip = ExtResource("6_auytq")
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1706743145 node_paths=PackedStringArray("target")]
 position = Vector2(37, 0)
