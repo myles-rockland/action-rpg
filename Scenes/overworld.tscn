@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dagt18rdsjnc2" path="res://Sprites/Characters/Character_EvilWizard.tres" id="5_4qj6l"]
 [ext_resource type="Script" uid="uid://djmtsjgl4mhcu" path="res://Scripts/Character/enemy.gd" id="5_rmeny"]
 [ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_auytq"]
+[ext_resource type="PackedScene" uid="uid://cbldek65c14eg" path="res://Scenes/Weapons/weapon_axe.tscn" id="6_c0h7r"]
+[ext_resource type="Script" uid="uid://cxo0q1ghd75ov" path="res://Scripts/Character/enemy_weapons.gd" id="9_auytq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
@@ -43,12 +45,13 @@ shape = SubResource("CapsuleShape2D_gvo7x")
 [node name="PlayerWeapons" type="Node2D" parent="Player" unique_id=1356456564]
 position = Vector2(0, 4)
 script = ExtResource("5_2ngsa")
-weapon_to_equip = ExtResource("6_auytq")
+weapon_to_equip = ExtResource("6_c0h7r")
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1706743145 node_paths=PackedStringArray("target")]
 position = Vector2(37, 0)
 script = ExtResource("5_rmeny")
 target = NodePath("../Player")
+stop_distance = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=321058715 node_paths=PackedStringArray("character")]
 texture = ExtResource("5_4qj6l")
@@ -57,3 +60,8 @@ character = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=899005808]
 shape = SubResource("CapsuleShape2D_rmeny")
+
+[node name="EnemyWeapons" type="Node2D" parent="Enemy" unique_id=497470086]
+position = Vector2(0, 5)
+script = ExtResource("9_auytq")
+weapon_to_equip = ExtResource("6_auytq")
