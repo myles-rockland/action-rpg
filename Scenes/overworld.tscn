@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://kcu7xi5a0k5h" path="res://Scripts/Character/player.gd" id="2_i8gr5"]
 [ext_resource type="Script" uid="uid://cmt1hbsgfdgkm" path="res://Scripts/Character/camera_controller.gd" id="2_v1c68"]
 [ext_resource type="Script" uid="uid://jeinasmxn8kn" path="res://Scripts/Character/character_visual.gd" id="4_s368d"]
+[ext_resource type="AudioStream" uid="uid://70ebxb4uiw7e" path="res://Audio/Hit_0.ogg" id="4_v8nvt"]
 [ext_resource type="Script" uid="uid://cmxujg0qlllc" path="res://Scripts/Character/player_weapons.gd" id="5_2ngsa"]
 [ext_resource type="Texture2D" uid="uid://dagt18rdsjnc2" path="res://Sprites/Characters/Character_EvilWizard.tres" id="5_4qj6l"]
 [ext_resource type="Script" uid="uid://djmtsjgl4mhcu" path="res://Scripts/Character/enemy.gd" id="5_rmeny"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d02c388ubbsvv" path="res://Scenes/Weapons/shield.tscn" id="7_v1c68"]
 [ext_resource type="Script" uid="uid://cxo0q1ghd75ov" path="res://Scripts/Character/enemy_weapons.gd" id="9_auytq"]
 [ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="9_dd6r4"]
+[ext_resource type="AudioStream" uid="uid://dv1fbbwvxsnss" path="res://Audio/Hit_1.ogg" id="12_5dcxx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
@@ -36,6 +38,7 @@ target = NodePath("../Player")
 script = ExtResource("2_i8gr5")
 move_speed = 50.0
 weapons = NodePath("PlayerWeapons")
+damaged_sound = ExtResource("4_v8nvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1921515096 node_paths=PackedStringArray("character")]
 position = Vector2(0, 7)
@@ -61,6 +64,7 @@ script = ExtResource("5_rmeny")
 target = NodePath("../Player")
 stop_distance = 20.0
 weapons = NodePath("EnemyWeapons")
+damaged_sound = ExtResource("12_5dcxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=321058715 node_paths=PackedStringArray("character")]
 texture = ExtResource("5_4qj6l")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbldek65c14eg"]
 
 [ext_resource type="Script" uid="uid://uvlsvm1galyn" path="res://Scripts/Weapons/melee_weapon.gd" id="1_5vdaq"]
+[ext_resource type="AudioStream" uid="uid://brwhla8ko676k" path="res://Audio/Attack_Heavy.ogg" id="2_7kqew"]
 [ext_resource type="Texture2D" uid="uid://nnn5juuro7la" path="res://Sprites/Items/Item_Axe.tres" id="2_33coa"]
 
 [sub_resource type="Animation" id="Animation_v1c68"]
@@ -64,9 +65,12 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.36666667, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"play_attack_sound"
+}, {
 "args": [],
 "method": &"detect_hits"
 }]
@@ -86,6 +90,7 @@ script = ExtResource("1_5vdaq")
 damage = 2
 hit_force = 200.0
 range = 30.0
+attack_sound = ExtResource("2_7kqew")
 use_rate = 0.8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=131833144]

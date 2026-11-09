@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbf0dy2s8crt8"]
 
 [ext_resource type="Script" uid="uid://uvlsvm1galyn" path="res://Scripts/Weapons/melee_weapon.gd" id="1_pyxvt"]
+[ext_resource type="AudioStream" uid="uid://c2wsgggq8fo7e" path="res://Audio/Attack_Light.ogg" id="2_51ec5"]
 [ext_resource type="Texture2D" uid="uid://y0wxnt6pofk3" path="res://Sprites/Items/Item_Sword.tres" id="2_g87a1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvo7x"]
@@ -43,9 +44,12 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.16666667, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"play_attack_sound"
+}, {
 "args": [],
 "method": &"detect_hits"
 }]
@@ -62,6 +66,7 @@ script = ExtResource("1_pyxvt")
 damage = 1
 hit_force = 150.0
 range = 30.0
+attack_sound = ExtResource("2_51ec5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1893098870]
 position = Vector2(11, 0)

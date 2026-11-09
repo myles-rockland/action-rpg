@@ -12,6 +12,7 @@ signal on_health_changed
 @export var weight : float = 1.0
 
 @export var weapons : CharacterWeapons
+@export var damaged_sound : AudioStream
 
 var move_input : Vector2
 var look_direction : Vector2
@@ -33,6 +34,7 @@ func take_damage(damage : int, force : Vector2):
 	
 	current_hp -= damage
 	add_force(force)
+	AudioManager.play(damaged_sound)
 	
 	if current_hp <= 0:
 		_die()

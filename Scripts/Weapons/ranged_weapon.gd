@@ -11,3 +11,5 @@ func _use():
 	projectile.global_rotation = global_rotation
 	
 	projectile.initialize(owner_character)
+	
+	AudioManager.play(attack_sound)
