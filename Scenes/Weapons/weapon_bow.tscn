@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bexch8dd0hhab"]
+
+[ext_resource type="Script" uid="uid://ba43tgi7peu5y" path="res://Scripts/Weapons/ranged_weapon.gd" id="1_ipr6a"]
+[ext_resource type="PackedScene" uid="uid://m4rwm5l5bjp" path="res://Scenes/Weapons/arrow.tscn" id="2_4hrs2"]
+[ext_resource type="Texture2D" uid="uid://mr0hxyrg04io" path="res://Sprites/Items/Item_Bow.tres" id="3_o1ljt"]
+
+[node name="Weapon_Bow" type="Node2D" unique_id=1348375398]
+script = ExtResource("1_ipr6a")
+projectile_scene = ExtResource("2_4hrs2")
+range = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1325936700]
+position = Vector2(10, 0)
+texture = ExtResource("3_o1ljt")
+
+[node name="Muzzle" type="Node2D" parent="." unique_id=667438244]
+position = Vector2(13, 0)

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dagt18rdsjnc2" path="res://Sprites/Characters/Character_EvilWizard.tres" id="5_4qj6l"]
 [ext_resource type="Script" uid="uid://djmtsjgl4mhcu" path="res://Scripts/Character/enemy.gd" id="5_rmeny"]
 [ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_auytq"]
-[ext_resource type="PackedScene" uid="uid://cbldek65c14eg" path="res://Scenes/Weapons/weapon_axe.tscn" id="6_c0h7r"]
+[ext_resource type="PackedScene" uid="uid://bexch8dd0hhab" path="res://Scenes/Weapons/weapon_bow.tscn" id="6_c0h7r"]
 [ext_resource type="Script" uid="uid://cxo0q1ghd75ov" path="res://Scripts/Character/enemy_weapons.gd" id="9_auytq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]

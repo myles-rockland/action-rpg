@@ -7,6 +7,9 @@ var aim_angle : float
 var owner_character : Character
 var can_use : bool = true
 
+func _ready():
+	last_use_time = Time.get_unix_time_from_system()
+
 func _process(delta : float):
 	global_rotation = lerp_angle(global_rotation, aim_angle, 40 * delta)
 	

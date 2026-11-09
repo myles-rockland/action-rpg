@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://m4rwm5l5bjp"]
+
+[ext_resource type="Script" uid="uid://cmd53vxe843fj" path="res://Scripts/Weapons/projectile.gd" id="1_5g1fh"]
+[ext_resource type="Texture2D" uid="uid://bxg4rbiy32ydv" path="res://Sprites/Items/Item_Arrow.tres" id="2_7sqmg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ogur"]
+size = Vector2(14, 4)
+
+[node name="Arrow" type="Area2D" unique_id=1303550716]
+script = ExtResource("1_5g1fh")
+speed = 150.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=226670959]
+rotation = 0.7853982
+texture = ExtResource("2_7sqmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1702366644]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_8ogur")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
