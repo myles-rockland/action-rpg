@@ -11,6 +11,8 @@ signal on_health_change
 @export var force_drag : float = 5
 @export var weight : float = 1.0
 
+@export var weapons : CharacterWeapons
+
 var move_input : Vector2
 var look_direction : Vector2
 
@@ -26,6 +28,9 @@ func _move(delta : float) -> void:
 	move_and_slide()
 	
 func take_damage(damage : int, force : Vector2):
+	if weapons.try_block_direction(force.normalized()):
+		return
+	
 	current_hp -= damage
 	add_force(force)
 	

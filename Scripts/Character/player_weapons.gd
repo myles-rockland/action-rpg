@@ -2,11 +2,19 @@ class_name PlayerWeapons
 extends CharacterWeapons
 
 func _process(delta : float):
-	var mouse_pos = get_global_mouse_position()
-	var mouse_dir = global_position.direction_to(mouse_pos)
+	var mouse_position = get_global_mouse_position()
+	var mouse_direction = global_position.direction_to(mouse_position)
 	
 	if current_weapon:
-		current_weapon.set_aim_direction(mouse_dir)
+		current_weapon.set_aim_direction(mouse_direction)
 		
 		if Input.is_action_just_pressed("attack"):
 			current_weapon._try_use()
+			
+	if current_shield:
+		current_shield.set_aim_direction(mouse_direction)
+		
+	if Input.is_action_just_pressed("block"):
+		toggle_shield(true)
+	elif Input.is_action_just_released("block"):
+		toggle_shield(false)

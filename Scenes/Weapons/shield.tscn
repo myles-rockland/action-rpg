@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d02c388ubbsvv"]
+
+[ext_resource type="Script" uid="uid://drb35rv28ubw" path="res://Scripts/Weapons/shield.gd" id="1_jxbso"]
+[ext_resource type="Texture2D" uid="uid://bo7ugi0xnp2op" path="res://Sprites/Items/Item_Shield.tres" id="2_mnsdq"]
+
+[node name="Shield" type="Node2D" unique_id=555129268]
+script = ExtResource("1_jxbso")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=715917916]
+position = Vector2(9, 0)
+texture = ExtResource("2_mnsdq")
