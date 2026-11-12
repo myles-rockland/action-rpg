@@ -16,10 +16,15 @@
 [ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="14_yt1oc"]
 [ext_resource type="Resource" uid="uid://dcdusiiv7sfv0" path="res://Items/Weapons/axe.tres" id="15_h1n2f"]
 [ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="16_dxpk4"]
+[ext_resource type="PackedScene" uid="uid://oacaqecgcbv3" path="res://Scenes/UI/inventory_slot.tscn" id="17_15c3i"]
+[ext_resource type="Script" uid="uid://rs6riy8q2eoa" path="res://Scripts/UI/inventory_ui.gd" id="17_yt1oc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
 height = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvo7x"]
+bg_color = Color(0.35, 0.175, 0.20416673, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1259294435 node_paths=PackedStringArray("weapons") groups=["Player"]]
 collision_layer = 2
@@ -56,3 +61,57 @@ ExtResource("14_yt1oc"): 1,
 ExtResource("15_h1n2f"): 1,
 ExtResource("16_dxpk4"): 12
 })
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1113786660]
+
+[node name="Inventory" type="Panel" parent="HUD" unique_id=1588611405]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -248.0
+offset_right = 241.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvo7x")
+script = ExtResource("17_yt1oc")
+
+[node name="Slots" type="GridContainer" parent="HUD/Inventory" unique_id=1151488093]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="InventorySlot" parent="HUD/Inventory/Slots" unique_id=1099036407 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="HUD/Inventory/Slots" unique_id=1770115186 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="HUD/Inventory/Slots" unique_id=97832321 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="HUD/Inventory/Slots" unique_id=804212362 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="HUD/Inventory/Slots" unique_id=1004383067 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="HUD/Inventory/Slots" unique_id=1725222682 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="HUD/Inventory/Slots" unique_id=1247743953 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="HUD/Inventory/Slots" unique_id=1451768037 instance=ExtResource("17_15c3i")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="HUD/Inventory/Slots" unique_id=219372910 instance=ExtResource("17_15c3i")]
+layout_mode = 2
