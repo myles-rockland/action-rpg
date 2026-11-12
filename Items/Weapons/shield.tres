@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShieldItemData" format=3 uid="uid://b5i24asj5dg70"]
+
+[ext_resource type="Script" uid="uid://ci3mhp2uvwruc" path="res://Scripts/Items/shield_item_data.gd" id="1_8bi6w"]
+[ext_resource type="PackedScene" uid="uid://d02c388ubbsvv" path="res://Scenes/Weapons/shield.tscn" id="1_ybfus"]
+[ext_resource type="Texture2D" uid="uid://bo7ugi0xnp2op" path="res://Sprites/Items/Item_Shield.tres" id="2_uevwl"]
+
+[resource]
+script = ExtResource("1_8bi6w")
+display_name = "Shield"
+description = "Blocks incoming damage"
+icon = ExtResource("2_uevwl")
+equip_scene = ExtResource("1_ybfus")
+metadata/_custom_type_script = "uid://ci3mhp2uvwruc"

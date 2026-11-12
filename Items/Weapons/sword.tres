@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponItemData" format=3 uid="uid://d0eeqwbbr3t3l"]
+
+[ext_resource type="Script" uid="uid://bueaijd8b5tik" path="res://Scripts/Items/weapon_item_data.gd" id="1_bcd83"]
+[ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="1_o7cgv"]
+[ext_resource type="Texture2D" uid="uid://y0wxnt6pofk3" path="res://Sprites/Items/Item_Sword.tres" id="2_8rivg"]
+
+[resource]
+script = ExtResource("1_bcd83")
+display_name = "Sword"
+description = "Light weapon with a quick attack"
+icon = ExtResource("2_8rivg")
+equip_scene = ExtResource("1_o7cgv")
+metadata/_custom_type_script = "uid://bueaijd8b5tik"

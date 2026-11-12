@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://cejbcqoel730q"]
+
+[ext_resource type="Texture2D" uid="uid://y0fdcqhwbmxw" path="res://Sprites/Items/Item_HealthPotion.tres" id="1_cfe7u"]
+[ext_resource type="Script" uid="uid://cm8pxq8n42tsv" path="res://Scripts/Items/consumable_item_data.gd" id="1_m3qxc"]
+
+[resource]
+script = ExtResource("1_m3qxc")
+display_name = "Health Potion"
+description = "+2 Health"
+max_stack_size = 12
+icon = ExtResource("1_cfe7u")
+metadata/_custom_type_script = "uid://cm8pxq8n42tsv"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponItemData" format=3 uid="uid://dcdusiiv7sfv0"]
+
+[ext_resource type="Script" uid="uid://bueaijd8b5tik" path="res://Scripts/Items/weapon_item_data.gd" id="1_otmp8"]
+[ext_resource type="PackedScene" uid="uid://cbldek65c14eg" path="res://Scenes/Weapons/weapon_axe.tscn" id="1_s2j7n"]
+[ext_resource type="Texture2D" uid="uid://nnn5juuro7la" path="res://Sprites/Items/Item_Axe.tres" id="2_5ctsa"]
+
+[resource]
+script = ExtResource("1_otmp8")
+display_name = "Axe"
+description = "Strong, but slower"
+icon = ExtResource("2_5ctsa")
+equip_scene = ExtResource("1_s2j7n")
+metadata/_custom_type_script = "uid://bueaijd8b5tik"

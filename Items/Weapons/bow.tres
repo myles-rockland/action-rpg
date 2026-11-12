@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponItemData" format=3 uid="uid://m02q3j0nqiri"]
+
+[ext_resource type="Script" uid="uid://bueaijd8b5tik" path="res://Scripts/Items/weapon_item_data.gd" id="1_mgxln"]
+[ext_resource type="PackedScene" uid="uid://bexch8dd0hhab" path="res://Scenes/Weapons/weapon_bow.tscn" id="1_oaqnt"]
+[ext_resource type="Texture2D" uid="uid://mr0hxyrg04io" path="res://Sprites/Items/Item_Bow.tres" id="2_dvb4d"]
+
+[resource]
+script = ExtResource("1_mgxln")
+display_name = "Bow"
+description = "Fires arrows"
+icon = ExtResource("2_dvb4d")
+equip_scene = ExtResource("1_oaqnt")
+metadata/_custom_type_script = "uid://bueaijd8b5tik"
