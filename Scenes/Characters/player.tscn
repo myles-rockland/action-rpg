@@ -26,6 +26,20 @@ height = 15.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvo7x"]
 bg_color = Color(0.35, 0.175, 0.20416673, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt1oc"]
+bg_color = Color(0.35, 0.1785, 0.20708339, 0.6745098)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gvo7x"]
+font_size = 22
+font_color = Color(0.855274, 0.76558626, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.78431374)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yt1oc"]
+line_spacing = -4.015
+font_size = 14
+shadow_color = Color(0, 0, 0, 0.34901962)
+
 [node name="Player" type="CharacterBody2D" unique_id=1259294435 node_paths=PackedStringArray("weapons") groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_gdgf0")
@@ -64,7 +78,7 @@ ExtResource("16_dxpk4"): 12
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1113786660]
 
-[node name="Inventory" type="Panel" parent="HUD" unique_id=1588611405]
+[node name="Inventory" type="Panel" parent="HUD" unique_id=1588611405 node_paths=PackedStringArray("slots")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -75,6 +89,7 @@ offset_bottom = -32.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gvo7x")
 script = ExtResource("17_yt1oc")
+slots = [NodePath("Slots/InventorySlot"), NodePath("Slots/InventorySlot2"), NodePath("Slots/InventorySlot3"), NodePath("Slots/InventorySlot4"), NodePath("Slots/InventorySlot5"), NodePath("Slots/InventorySlot6"), NodePath("Slots/InventorySlot7"), NodePath("Slots/InventorySlot8"), NodePath("Slots/InventorySlot9")]
 
 [node name="Slots" type="GridContainer" parent="HUD/Inventory" unique_id=1151488093]
 layout_mode = 1
@@ -115,3 +130,34 @@ layout_mode = 2
 
 [node name="InventorySlot9" parent="HUD/Inventory/Slots" unique_id=219372910 instance=ExtResource("17_15c3i")]
 layout_mode = 2
+
+[node name="ItemInfoPanel" type="Panel" parent="HUD" unique_id=1298084640]
+offset_left = 24.0
+offset_top = 363.0
+offset_right = 242.0
+offset_bottom = 465.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yt1oc")
+
+[node name="ItemName" type="Label" parent="HUD/ItemInfoPanel" unique_id=371965346]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Item Name"
+label_settings = SubResource("LabelSettings_gvo7x")
+
+[node name="DescriptionText" type="Label" parent="HUD/ItemInfoPanel" unique_id=1703644106]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_top = 30.0
+offset_bottom = 66.0
+grow_horizontal = 2
+text = "Item description goes here, explaining what this item does."
+label_settings = SubResource("LabelSettings_yt1oc")
+autowrap_mode = 2

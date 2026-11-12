@@ -137,6 +137,7 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_xrqeh")
+stretch_mode = 5
 
 [node name="QuantityText" type="Label" parent="." unique_id=751352986]
 layout_mode = 1

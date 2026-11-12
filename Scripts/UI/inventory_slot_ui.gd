@@ -16,7 +16,7 @@ func set_item_slot(item_slot : Inventory.ItemSlot, player : Player):
 	
 	# TODO: change is_equipped depending on whether the item is actually equipped
 	
-	equipped.visisble = is_equipped
+	equipped.visible = is_equipped
 	
 	# set icon
 	if item_slot.item:
