@@ -8,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_01b8d"]
 [ext_resource type="PackedScene" uid="uid://d02c388ubbsvv" path="res://Scenes/Weapons/shield.tscn" id="7_xccyk"]
 [ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="8_h1n2f"]
+[ext_resource type="Script" uid="uid://d12o5n8h2yf3w" path="res://Scripts/Inventory/inventory.gd" id="9_xo8ps"]
+[ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="10_xccyk"]
+[ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="11_h1n2f"]
+[ext_resource type="Resource" uid="uid://m02q3j0nqiri" path="res://Items/Weapons/bow.tres" id="12_dxpk4"]
+[ext_resource type="Resource" uid="uid://b5i24asj5dg70" path="res://Items/Weapons/shield.tres" id="13_15c3i"]
+[ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="14_yt1oc"]
+[ext_resource type="Resource" uid="uid://dcdusiiv7sfv0" path="res://Items/Weapons/axe.tres" id="15_h1n2f"]
+[ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="16_dxpk4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
@@ -37,3 +45,14 @@ weapon_to_equip = ExtResource("6_01b8d")
 shield_to_equip = ExtResource("7_xccyk")
 
 [node name="HealthBar" parent="." unique_id=1854990326 instance=ExtResource("8_h1n2f")]
+
+[node name="Inventory" type="Node" parent="." unique_id=1471694993]
+script = ExtResource("9_xo8ps")
+start_items = Dictionary[ExtResource("10_xccyk"), int]({
+ExtResource("11_h1n2f"): 10,
+ExtResource("12_dxpk4"): 1,
+ExtResource("13_15c3i"): 1,
+ExtResource("14_yt1oc"): 1,
+ExtResource("15_h1n2f"): 1,
+ExtResource("16_dxpk4"): 12
+})
