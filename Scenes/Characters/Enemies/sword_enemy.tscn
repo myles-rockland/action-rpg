@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://pc0ovv88boy7"]
 
 [ext_resource type="PackedScene" uid="uid://b1vlwee45q5vv" path="res://Scenes/Characters/Enemies/base_enemy.tscn" id="1_0ixc0"]
+[ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="2_g5m6j"]
+[ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="3_wc56a"]
+[ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="4_m32js"]
 
 [node name="Sword_Enemy" unique_id=795717158 instance=ExtResource("1_0ixc0")]
+drop_pool = Dictionary[ExtResource("2_g5m6j"), int]({
+ExtResource("3_wc56a"): 2,
+ExtResource("4_m32js"): 4
+})
 current_hp = 5
 max_hp = 5
 move_speed = 30.0

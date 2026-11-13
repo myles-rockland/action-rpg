@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	
 func set_item(item : ItemData):
 	self.item = item
-	sprite.texture = item.icon
+	$Sprite2D.texture = item.icon
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):

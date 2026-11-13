@@ -8,6 +8,9 @@ var target : CharacterBody2D
 var target_direction : Vector2
 var target_distance : float
 
+@export var drop_pool : Dictionary[ItemData, int]
+var world_item_scene : PackedScene = preload("res://Scenes/Other Entities/world_item.tscn")
+
 func _ready():
 	target = get_tree().get_first_node_in_group("Player")
 
@@ -26,4 +29,31 @@ func _process(delta):
 		move_input = Vector2.ZERO
 
 func _die():
+	_drop_item()
 	queue_free()
+
+func _drop_item():
+	var item_data : ItemData = _get_item_to_drop()
+	var world_item : WorldItem = world_item_scene.instantiate()
+	
+	get_parent().add_child.call_deferred(world_item)
+	world_item.global_position = global_position
+	
+	world_item.set_item(item_data)
+
+func _get_item_to_drop() -> ItemData:
+	var total_weight : int = 0
+	
+	for key in drop_pool:
+		total_weight += drop_pool[key]
+		
+	var rand = randi_range(0, total_weight)
+	var count : int = 0
+	
+	for key in drop_pool:
+		count += drop_pool[key]
+		
+		if rand <= count:
+			return key
+			
+	return null
