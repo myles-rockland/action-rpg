@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://charwn474fq2t" path="res://Scenes/Characters/player_camera.tscn" id="3_ptaje"]
 [ext_resource type="PackedScene" uid="uid://pc0ovv88boy7" path="res://Scenes/Characters/Enemies/sword_enemy.tscn" id="4_5cb5c"]
 [ext_resource type="PackedScene" uid="uid://cxm36ce2ufyib" path="res://Scenes/Characters/Enemies/axe_enemy.tscn" id="5_8ve8c"]
+[ext_resource type="PackedScene" uid="uid://besc6vr7kkbnb" path="res://Scenes/Other Entities/world_item.tscn" id="6_imtpg"]
+[ext_resource type="Resource" uid="uid://b5i24asj5dg70" path="res://Items/Weapons/shield.tres" id="7_ucyum"]
 
 [node name="Root" type="Node2D" unique_id=562270886]
 
@@ -39,5 +41,9 @@ collision_layer = 1
 [node name="Axe_Enemy3" parent="." unique_id=512096536 instance=ExtResource("5_8ve8c")]
 position = Vector2(401, 192)
 collision_layer = 1
+
+[node name="WorldItem" parent="." unique_id=113835529 instance=ExtResource("6_imtpg")]
+position = Vector2(-361, -24)
+TESTITEM = ExtResource("7_ucyum")
 
 [editable path="Player"]

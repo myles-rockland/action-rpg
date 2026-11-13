@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://besc6vr7kkbnb"]
+
+[ext_resource type="Script" uid="uid://ch6a3s7grvarm" path="res://Scripts/Items/world_item.gd" id="1_3gdxi"]
+[ext_resource type="Texture2D" uid="uid://y0fdcqhwbmxw" path="res://Sprites/Items/Item_HealthPotion.tres" id="2_eij2y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvo7x"]
+radius = 2.0
+
+[node name="WorldItem" type="Area2D" unique_id=113835529]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3gdxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1621260286]
+texture = ExtResource("2_eij2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=246750117]
+shape = SubResource("CircleShape2D_gvo7x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
