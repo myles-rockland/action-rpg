@@ -1,12 +1,19 @@
 class_name WorldItem
 extends Area2D
 
+@export var start_item : ItemData
 var item : ItemData
 
 @onready var sprite : Sprite2D = $Sprite2D
 
 var bob_speed : float = 10
 var bob_amount : float = 2
+
+var pickup_sound : AudioStream = preload("res://Audio/Items/Pickup_Item.ogg")
+
+func _ready():
+	if start_item:
+		set_item(start_item)
 
 func _process(delta: float) -> void:
 	var time = Time.get_unix_time_from_system()
@@ -26,4 +33,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if not picked_up:
 		return
 		
+	AudioManager.play(pickup_sound)
 	queue_free()

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bv6k5cxvi42fh"]
+
+[ext_resource type="PackedScene" uid="uid://b1vlwee45q5vv" path="res://Scenes/Characters/Enemies/base_enemy.tscn" id="1_28dyq"]
+[ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="2_bunyy"]
+[ext_resource type="Resource" uid="uid://m02q3j0nqiri" path="res://Items/Weapons/bow.tres" id="3_ycort"]
+[ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="4_unj14"]
+
+[node name="Bow_Enemy" unique_id=795717158 instance=ExtResource("1_28dyq")]
+stop_distance = 80.0
+drop_pool = Dictionary[ExtResource("2_bunyy"), int]({
+ExtResource("3_ycort"): 10,
+ExtResource("4_unj14"): 2
+})
+
+[node name="EnemyWeapons" parent="." index="2" unique_id=1393475569]
+weapon_to_equip = ExtResource("3_ycort")

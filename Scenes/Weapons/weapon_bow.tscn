@@ -12,6 +12,7 @@ projectile_scene = ExtResource("2_4hrs2")
 projectile_item = ExtResource("3_iw6ev")
 range = 100.0
 attack_sound = ExtResource("3_4hrs2")
+use_rate = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1325936700]
 position = Vector2(10, 0)

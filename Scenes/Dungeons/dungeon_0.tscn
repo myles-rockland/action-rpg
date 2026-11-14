@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://charwn474fq2t" path="res://Scenes/Characters/player_camera.tscn" id="3_ptaje"]
 [ext_resource type="PackedScene" uid="uid://pc0ovv88boy7" path="res://Scenes/Characters/Enemies/sword_enemy.tscn" id="4_5cb5c"]
 [ext_resource type="PackedScene" uid="uid://cxm36ce2ufyib" path="res://Scenes/Characters/Enemies/axe_enemy.tscn" id="5_8ve8c"]
+[ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="5_vuy2l"]
+[ext_resource type="PackedScene" uid="uid://besc6vr7kkbnb" path="res://Scenes/Other Entities/world_item.tscn" id="6_imtpg"]
+[ext_resource type="Resource" uid="uid://b5i24asj5dg70" path="res://Items/Weapons/shield.tres" id="6_r2w43"]
+[ext_resource type="PackedScene" uid="uid://bv6k5cxvi42fh" path="res://Scenes/Characters/Enemies/bow_enemy.tscn" id="7_r2w43"]
+[ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="7_ucyum"]
+[ext_resource type="Resource" uid="uid://m02q3j0nqiri" path="res://Items/Weapons/bow.tres" id="10_vuy2l"]
 
 [node name="Root" type="Node2D" unique_id=562270886]
 
@@ -20,16 +26,18 @@ position = Vector2(-336, 8)
 target = NodePath("../Player")
 
 [node name="Sword_Enemy" parent="." unique_id=795717158 instance=ExtResource("4_5cb5c")]
-position = Vector2(-166, 6)
+position = Vector2(-107, 6)
 collision_layer = 1
 chase_distance = 180.0
+drop_pool = Dictionary[ExtResource("5_vuy2l"), int]({
+ExtResource("6_r2w43"): 1
+})
+
+[node name="Bow_Enemy" parent="." unique_id=1876383893 instance=ExtResource("7_r2w43")]
+position = Vector2(102, -277)
 
 [node name="Sword_Enemy2" parent="." unique_id=938876885 instance=ExtResource("4_5cb5c")]
 position = Vector2(60, -301)
-collision_layer = 1
-
-[node name="Axe_Enemy" parent="." unique_id=2122572899 instance=ExtResource("5_8ve8c")]
-position = Vector2(102, -269)
 collision_layer = 1
 
 [node name="Axe_Enemy2" parent="." unique_id=1073347686 instance=ExtResource("5_8ve8c")]
@@ -39,5 +47,23 @@ collision_layer = 1
 [node name="Axe_Enemy3" parent="." unique_id=512096536 instance=ExtResource("5_8ve8c")]
 position = Vector2(401, 192)
 collision_layer = 1
+
+[node name="DungeonItems" type="Node" parent="." unique_id=1698413089]
+
+[node name="WorldItem" parent="DungeonItems" unique_id=113835529 instance=ExtResource("6_imtpg")]
+position = Vector2(388, -3)
+start_item = ExtResource("7_ucyum")
+
+[node name="WorldItem2" parent="DungeonItems" unique_id=41559423 instance=ExtResource("6_imtpg")]
+position = Vector2(371, -4)
+start_item = ExtResource("7_ucyum")
+
+[node name="WorldItem3" parent="DungeonItems" unique_id=1180012172 instance=ExtResource("6_imtpg")]
+position = Vector2(389, 14)
+start_item = ExtResource("7_ucyum")
+
+[node name="WorldItem4" parent="DungeonItems" unique_id=473610944 instance=ExtResource("6_imtpg")]
+position = Vector2(106, -318)
+start_item = ExtResource("10_vuy2l")
 
 [editable path="Player"]

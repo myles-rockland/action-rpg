@@ -8,11 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="8_h1n2f"]
 [ext_resource type="Script" uid="uid://d12o5n8h2yf3w" path="res://Scripts/Inventory/inventory.gd" id="9_xo8ps"]
 [ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="10_xccyk"]
-[ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="11_h1n2f"]
-[ext_resource type="Resource" uid="uid://m02q3j0nqiri" path="res://Items/Weapons/bow.tres" id="12_dxpk4"]
-[ext_resource type="Resource" uid="uid://b5i24asj5dg70" path="res://Items/Weapons/shield.tres" id="13_15c3i"]
 [ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="14_yt1oc"]
-[ext_resource type="Resource" uid="uid://dcdusiiv7sfv0" path="res://Items/Weapons/axe.tres" id="15_h1n2f"]
 [ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="16_dxpk4"]
 [ext_resource type="PackedScene" uid="uid://oacaqecgcbv3" path="res://Scenes/UI/inventory_slot.tscn" id="17_15c3i"]
 [ext_resource type="Script" uid="uid://rs6riy8q2eoa" path="res://Scripts/UI/inventory_ui.gd" id="17_yt1oc"]
@@ -64,12 +60,8 @@ script = ExtResource("5_cueqf")
 [node name="Inventory" type="Node" parent="." unique_id=1471694993]
 script = ExtResource("9_xo8ps")
 start_items = Dictionary[ExtResource("10_xccyk"), int]({
-ExtResource("11_h1n2f"): 10,
-ExtResource("12_dxpk4"): 1,
-ExtResource("13_15c3i"): 1,
 ExtResource("14_yt1oc"): 1,
-ExtResource("15_h1n2f"): 1,
-ExtResource("16_dxpk4"): 12
+ExtResource("16_dxpk4"): 1
 })
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1113786660]
