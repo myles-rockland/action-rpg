@@ -46,7 +46,10 @@ func _die():
 	pass
 	
 func heal(amount : int):
-	pass
+	current_hp += amount
+	current_hp = clamp(current_hp, 0, max_hp)
+	
+	on_health_changed.emit()
 	
 func add_force(force : Vector2):
 	external_force += force / weight

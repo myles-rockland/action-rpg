@@ -38,4 +38,4 @@ func _on_pressed():
 	if not item_slot or not item_slot.item:
 		return
 		
-	# click on the item - trigger whatever it does. Equipping, consuming, unequipping, whatever
+	item_slot.item._select_in_inventory(player, item_slot)

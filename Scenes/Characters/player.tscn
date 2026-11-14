@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="3_fcmex"]
 [ext_resource type="Script" uid="uid://jeinasmxn8kn" path="res://Scripts/Character/character_visual.gd" id="4_25bbb"]
 [ext_resource type="Script" uid="uid://cmxujg0qlllc" path="res://Scripts/Character/player_weapons.gd" id="5_cueqf"]
-[ext_resource type="PackedScene" uid="uid://bbf0dy2s8crt8" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_01b8d"]
-[ext_resource type="PackedScene" uid="uid://d02c388ubbsvv" path="res://Scenes/Weapons/shield.tscn" id="7_xccyk"]
 [ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="8_h1n2f"]
 [ext_resource type="Script" uid="uid://d12o5n8h2yf3w" path="res://Scripts/Inventory/inventory.gd" id="9_xo8ps"]
 [ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="10_xccyk"]
@@ -60,8 +58,6 @@ shape = SubResource("CapsuleShape2D_gvo7x")
 [node name="PlayerWeapons" type="Node2D" parent="." unique_id=1324430788]
 position = Vector2(0, 4)
 script = ExtResource("5_cueqf")
-weapon_to_equip = ExtResource("6_01b8d")
-shield_to_equip = ExtResource("7_xccyk")
 
 [node name="HealthBar" parent="." unique_id=1854990326 instance=ExtResource("8_h1n2f")]
 

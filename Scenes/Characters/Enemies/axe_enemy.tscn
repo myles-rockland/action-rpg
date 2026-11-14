@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://delaw40asu4s2" path="res://Sprites/Characters/Character_Cyclops.tres" id="2_jrxit"]
 [ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="2_mpn78"]
 [ext_resource type="Resource" uid="uid://dcdusiiv7sfv0" path="res://Items/Weapons/axe.tres" id="3_gxlw8"]
-[ext_resource type="PackedScene" uid="uid://cbldek65c14eg" path="res://Scenes/Weapons/weapon_axe.tscn" id="3_qguem"]
 [ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="4_se4oy"]
 [ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="5_o4itd"]
 
@@ -21,4 +20,4 @@ weight = 2.0
 texture = ExtResource("2_jrxit")
 
 [node name="EnemyWeapons" parent="." index="2" unique_id=1393475569]
-weapon_to_equip = ExtResource("3_qguem")
+weapon_to_equip = ExtResource("3_gxlw8")
