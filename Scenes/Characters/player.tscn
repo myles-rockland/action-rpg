@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="3_fcmex"]
 [ext_resource type="Script" uid="uid://jeinasmxn8kn" path="res://Scripts/Character/character_visual.gd" id="4_25bbb"]
 [ext_resource type="Script" uid="uid://cmxujg0qlllc" path="res://Scripts/Character/player_weapons.gd" id="5_cueqf"]
+[ext_resource type="Script" uid="uid://c4dbte0f4hx73" path="res://Scripts/Interaction/interaction_controller.gd" id="6_01b8d"]
 [ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="8_h1n2f"]
 [ext_resource type="Script" uid="uid://d12o5n8h2yf3w" path="res://Scripts/Inventory/inventory.gd" id="9_xo8ps"]
 [ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="10_xccyk"]
@@ -16,6 +17,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvo7x"]
 radius = 6.0
 height = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvo7x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvo7x"]
 bg_color = Color(0.35, 0.175, 0.20416673, 1)
@@ -33,6 +36,11 @@ shadow_color = Color(0, 0, 0, 0.78431374)
 line_spacing = -4.015
 font_size = 14
 shadow_color = Color(0, 0, 0, 0.34901962)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cueqf"]
+font_size = 26
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.7764706)
 
 [node name="Player" type="CharacterBody2D" unique_id=1259294435 node_paths=PackedStringArray("weapons") groups=["Player"]]
 collision_layer = 2
@@ -54,6 +62,16 @@ shape = SubResource("CapsuleShape2D_gvo7x")
 [node name="PlayerWeapons" type="Node2D" parent="." unique_id=1324430788]
 position = Vector2(0, 4)
 script = ExtResource("5_cueqf")
+
+[node name="InteractionController" type="Area2D" parent="." unique_id=1868011698]
+script = ExtResource("6_01b8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController" unique_id=1096573072]
+shape = SubResource("CircleShape2D_gvo7x")
+
+[node name="CheckTimer" type="Timer" parent="InteractionController" unique_id=700798224]
+wait_time = 0.1
+autostart = true
 
 [node name="HealthBar" parent="." unique_id=1854990326 instance=ExtResource("8_h1n2f")]
 
@@ -149,3 +167,23 @@ grow_horizontal = 2
 text = "Item description goes here, explaining what this item does."
 label_settings = SubResource("LabelSettings_yt1oc")
 autowrap_mode = 2
+
+[node name="InteractPrompt" type="Label" parent="HUD" unique_id=701476443]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.5
+offset_top = -123.0
+offset_right = 237.5
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] Pickup Item Name"
+label_settings = SubResource("LabelSettings_cueqf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="InteractionController/CheckTimer" to="InteractionController" method="_check"]
