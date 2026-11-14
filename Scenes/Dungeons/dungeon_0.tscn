@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bv6k5cxvi42fh" path="res://Scenes/Characters/Enemies/bow_enemy.tscn" id="7_r2w43"]
 [ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="7_ucyum"]
 [ext_resource type="Resource" uid="uid://m02q3j0nqiri" path="res://Items/Weapons/bow.tres" id="10_vuy2l"]
+[ext_resource type="Script" uid="uid://ce8qf2p3v00qk" path="res://Scripts/Interaction/portal_interaction.gd" id="12_7y2tg"]
+[ext_resource type="Script" uid="uid://mnrfwta0phd5" path="res://Scripts/Interaction/interactable.gd" id="14_jsekb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tncop"]
+radius = 7.071068
 
 [node name="Root" type="Node2D" unique_id=562270886]
 
@@ -65,5 +70,18 @@ start_item = ExtResource("7_ucyum")
 [node name="WorldItem4" parent="DungeonItems" unique_id=473610944 instance=ExtResource("6_imtpg")]
 position = Vector2(106, -318)
 start_item = ExtResource("10_vuy2l")
+
+[node name="DungeonExit" type="Node2D" parent="." unique_id=1735803094]
+position = Vector2(-375, -39)
+script = ExtResource("12_7y2tg")
+scene_to_load = "uid://wivh28hged5x"
+enter_position = Vector2(-128, -58)
+
+[node name="Interactable" type="Area2D" parent="DungeonExit" unique_id=1198719577]
+script = ExtResource("14_jsekb")
+prompt = "Exit Dungeon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonExit/Interactable" unique_id=1715231782]
+shape = SubResource("CircleShape2D_tncop")
 
 [editable path="Player"]

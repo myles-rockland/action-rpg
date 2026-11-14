@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bib2akjfq1ncv" path="res://Scenes/Characters/player.tscn" id="3_c0h7r"]
 [ext_resource type="Script" uid="uid://ce8qf2p3v00qk" path="res://Scripts/Interaction/portal_interaction.gd" id="4_4qj6l"]
 [ext_resource type="Script" uid="uid://mnrfwta0phd5" path="res://Scripts/Interaction/interactable.gd" id="4_s368d"]
-[ext_resource type="PackedScene" uid="uid://dgd2aw5lgirwb" path="res://Scenes/Dungeons/dungeon_0.tscn" id="5_rmeny"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tncop"]
 radius = 7.071068
@@ -24,12 +23,13 @@ tile_set = ExtResource("1_l45s6")
 target = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1259294435 instance=ExtResource("3_c0h7r")]
-position = Vector2(-129, -38)
+position = Vector2(-128, -30)
 
 [node name="DungeonEntrance" type="Node2D" parent="." unique_id=767402261]
 position = Vector2(-128, -74)
 script = ExtResource("4_4qj6l")
-scene_to_load = ExtResource("5_rmeny")
+scene_to_load = "uid://dgd2aw5lgirwb"
+enter_position = Vector2(-335, 10)
 
 [node name="Interactable" type="Area2D" parent="DungeonEntrance" unique_id=1207145493]
 script = ExtResource("4_s368d")
