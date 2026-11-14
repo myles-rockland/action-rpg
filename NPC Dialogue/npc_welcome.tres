@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cmik5yhgooomg"]
+
+[ext_resource type="Texture2D" uid="uid://ryo8ejfhg2w4" path="res://Sprites/Characters/Character_Wizard.tres" id="1_735h5"]
+[ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="1_ht8ih"]
+[ext_resource type="Script" uid="uid://b178atm6cbte5" path="res://Scripts/Dialogue/dialogue.gd" id="1_y5fwq"]
+
+[resource]
+script = ExtResource("1_y5fwq")
+npc_name = "Wizard"
+npc_icon = ExtResource("1_735h5")
+lines = Array[String](["Please help! Our dungeon has been overrun with monsters.", "We need your help defeating these monsters.", "Here, take this sword. I think it can help you out."])
+item_to_give = ExtResource("1_ht8ih")
+metadata/_custom_type_script = "uid://b178atm6cbte5"
