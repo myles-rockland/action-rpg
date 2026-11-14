@@ -14,7 +14,10 @@ func set_item_slot(item_slot : Inventory.ItemSlot, player : Player):
 	
 	var is_equipped : bool = false
 	
-	# TODO: change is_equipped depending on whether the item is actually equipped
+	if player.weapons.weapon_inventory_slot == item_slot:
+		is_equipped = true
+	elif player.weapons.shield_inventory_slot == item_slot:
+		is_equipped = true
 	
 	equipped.visible = is_equipped
 	

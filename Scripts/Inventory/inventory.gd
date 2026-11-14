@@ -36,7 +36,7 @@ func add_item(item : ItemData) -> bool:
 		slot.quantity = 1
 		
 	inventory_updated.emit()
-	slot_updated.emit()
+	slot_updated.emit(slot)
 	return true
 	
 func remove_item(item : ItemData):
