@@ -2,6 +2,8 @@ class_name Player
 extends Character
 
 @onready var inventory : Inventory = $Inventory
+@onready var dialogue_controller : DialogueController = $DialogueController
+var interaction_controller : InteractionController
 
 func _ready():
 	if GameManager.player and GameManager.player != self:
@@ -19,3 +21,15 @@ func _process(delta):
 
 func _die():
 	get_tree().reload_current_scene()
+
+func toggle_usability(toggle : bool):
+	can_move = toggle
+	weapons.can_use = toggle
+	
+	if not interaction_controller:
+		interaction_controller = $InteractionController
+		
+	if toggle:
+		interaction_controller.enable()
+	else:
+		interaction_controller.disable()

@@ -5,9 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://bib2akjfq1ncv" path="res://Scenes/Characters/player.tscn" id="3_c0h7r"]
 [ext_resource type="Script" uid="uid://ce8qf2p3v00qk" path="res://Scripts/Interaction/portal_interaction.gd" id="4_4qj6l"]
 [ext_resource type="Script" uid="uid://mnrfwta0phd5" path="res://Scripts/Interaction/interactable.gd" id="4_s368d"]
+[ext_resource type="Script" uid="uid://tbjik3ikbakf" path="res://Scripts/Dialogue/dialogue_npc.gd" id="6_hf0oe"]
+[ext_resource type="Texture2D" uid="uid://ryo8ejfhg2w4" path="res://Sprites/Characters/Character_Wizard.tres" id="6_rmeny"]
+[ext_resource type="Resource" uid="uid://cmik5yhgooomg" path="res://NPC Dialogue/npc_welcome.tres" id="7_2ngsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tncop"]
 radius = 7.071068
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvo7x"]
+radius = 7.0
 
 [node name="Root" type="Node2D" unique_id=580417392]
 
@@ -37,3 +43,18 @@ prompt = "Enter Dungeon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonEntrance/Interactable" unique_id=1423552594]
 shape = SubResource("CircleShape2D_tncop")
+
+[node name="DialogueNPC" type="Node2D" parent="." unique_id=400551426]
+position = Vector2(92, 0)
+script = ExtResource("6_hf0oe")
+dialogue = ExtResource("7_2ngsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueNPC" unique_id=1677199539]
+texture = ExtResource("6_rmeny")
+
+[node name="Interactable" type="Area2D" parent="DialogueNPC" unique_id=1157294494]
+script = ExtResource("4_s368d")
+prompt = "Talk to Wizard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueNPC/Interactable" unique_id=1790470873]
+shape = SubResource("CircleShape2D_gvo7x")

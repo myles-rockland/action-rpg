@@ -7,6 +7,9 @@ func _ready():
 	$"../Inventory".slot_updated.connect(_on_updated_inventory_slot)
 
 func _process(delta : float):
+	if not can_use:
+		return
+	
 	var mouse_position = get_global_mouse_position()
 	var mouse_direction = global_position.direction_to(mouse_position)
 	

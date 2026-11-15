@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dh7cy76s3unff" path="res://Scenes/UI/health_bar.tscn" id="8_h1n2f"]
 [ext_resource type="Script" uid="uid://d12o5n8h2yf3w" path="res://Scripts/Inventory/inventory.gd" id="9_xo8ps"]
 [ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="10_xccyk"]
+[ext_resource type="Script" uid="uid://cjqu5xh7k4wb0" path="res://Scripts/Dialogue/dialogue_controller.gd" id="12_h1n2f"]
+[ext_resource type="Texture2D" uid="uid://ryo8ejfhg2w4" path="res://Sprites/Characters/Character_Wizard.tres" id="14_xccyk"]
 [ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="14_yt1oc"]
 [ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="16_dxpk4"]
 [ext_resource type="PackedScene" uid="uid://oacaqecgcbv3" path="res://Scenes/UI/inventory_slot.tscn" id="17_15c3i"]
@@ -41,6 +43,27 @@ shadow_color = Color(0, 0, 0, 0.34901962)
 font_size = 26
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.7764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01b8d"]
+bg_color = Color(0, 0, 0, 0.5058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tncop"]
+bg_color = Color(0.6273555, 0.43885702, 0.29377806, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ogur"]
+bg_color = Color(0.33333334, 0.21568628, 0.1254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xccyk"]
+font_size = 28
+font_color = Color(1, 0.74509805, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.2784314)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1n2f"]
+line_spacing = -3.0
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.4627451)
 
 [node name="Player" type="CharacterBody2D" unique_id=1259294435 node_paths=PackedStringArray("weapons") groups=["Player"]]
 collision_layer = 2
@@ -81,6 +104,9 @@ start_items = Dictionary[ExtResource("10_xccyk"), int]({
 ExtResource("14_yt1oc"): 1,
 ExtResource("16_dxpk4"): 1
 })
+
+[node name="DialogueController" type="Node" parent="." unique_id=1707597244]
+script = ExtResource("12_h1n2f")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1113786660]
 
@@ -185,5 +211,80 @@ text = "[E] Pickup Item Name"
 label_settings = SubResource("LabelSettings_cueqf")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DialogueScreen" type="Panel" parent="HUD" unique_id=1317420979]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01b8d")
+
+[node name="DialoguePanel" type="Panel" parent="HUD/DialogueScreen" unique_id=1272709691]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -237.0
+offset_right = 300.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tncop")
+
+[node name="BG" type="Panel" parent="HUD/DialogueScreen/DialoguePanel" unique_id=845029821]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -95.0
+offset_right = 295.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ogur")
+
+[node name="NPCIcon" type="TextureRect" parent="HUD/DialogueScreen/DialoguePanel" unique_id=1050735441]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = 123.0
+grow_vertical = 2
+texture = ExtResource("14_xccyk")
+stretch_mode = 5
+
+[node name="NPCName" type="Label" parent="HUD/DialogueScreen/DialoguePanel" unique_id=1036258360]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 159.0
+offset_top = 15.0
+offset_right = -32.0
+offset_bottom = 62.0
+grow_horizontal = 2
+text = "NPC Name"
+label_settings = SubResource("LabelSettings_xccyk")
+
+[node name="Dialogue" type="Label" parent="HUD/DialogueScreen/DialoguePanel" unique_id=1480213943]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 159.0
+offset_top = 53.0
+offset_right = -32.0
+offset_bottom = 177.0
+grow_horizontal = 2
+text = "This is where the NPC will talk to you, tell the player certain information"
+label_settings = SubResource("LabelSettings_h1n2f")
+autowrap_mode = 2
 
 [connection signal="timeout" from="InteractionController/CheckTimer" to="InteractionController" method="_check"]
