@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://m5vgg54mirv3"]
 
-[ext_resource type="Script" uid="uid://bjodf6iw8y3j" path="res://Scripts/UI/game_button.gd" id="1_tpr8k"]
+[ext_resource type="Script" uid="uid://bbvx0ae3x7dp4" path="res://Scripts/UI/shop_item_ui.gd" id="1_emgyl"]
 [ext_resource type="Texture2D" uid="uid://cvi2growfl5pu" path="res://Sprites/UI/UI_InventorySlot.tres" id="2_6bce6"]
 [ext_resource type="Texture2D" uid="uid://nnn5juuro7la" path="res://Sprites/Items/Item_Axe.tres" id="3_emgyl"]
 [ext_resource type="Texture2D" uid="uid://bshdye34yp8m3" path="res://Sprites/UI/UI_Gold.tres" id="4_emgyl"]
@@ -108,7 +108,7 @@ button_group = null
 shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
-script = ExtResource("1_tpr8k")
+script = ExtResource("1_emgyl")
 metadata/_custom_type_script = "uid://bjodf6iw8y3j"
 
 [node name="BG" type="Panel" parent="." unique_id=358796806]

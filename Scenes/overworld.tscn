@@ -8,12 +8,25 @@
 [ext_resource type="Script" uid="uid://tbjik3ikbakf" path="res://Scripts/Dialogue/dialogue_npc.gd" id="6_hf0oe"]
 [ext_resource type="Texture2D" uid="uid://ryo8ejfhg2w4" path="res://Sprites/Characters/Character_Wizard.tres" id="6_rmeny"]
 [ext_resource type="Resource" uid="uid://cmik5yhgooomg" path="res://NPC Dialogue/npc_welcome.tres" id="7_2ngsa"]
+[ext_resource type="Texture2D" uid="uid://cu7ai3bq05u2k" path="res://Sprites/Characters/Character_Shopkeeper.tres" id="9_auytq"]
+[ext_resource type="Script" uid="uid://ddtp4fy6facxt" path="res://Scripts/Shop/shop_npc.gd" id="9_c0h7r"]
+[ext_resource type="Script" uid="uid://cdbyxyi2yiax2" path="res://Scripts/Shop/shop.gd" id="11_46gqp"]
+[ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="12_8k6i5"]
+[ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="13_dlnb1"]
+[ext_resource type="Resource" uid="uid://oy6katox5nv" path="res://Items/Weapons/arrow.tres" id="14_0imqq"]
+[ext_resource type="Resource" uid="uid://dcdusiiv7sfv0" path="res://Items/Weapons/axe.tres" id="15_8ho5u"]
+[ext_resource type="Resource" uid="uid://m02q3j0nqiri" path="res://Items/Weapons/bow.tres" id="16_e8ubm"]
+[ext_resource type="Resource" uid="uid://b5i24asj5dg70" path="res://Items/Weapons/shield.tres" id="17_ci6rn"]
+[ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="18_2brhu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tncop"]
 radius = 7.071068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvo7x"]
 radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ogur"]
+radius = 6.0
 
 [node name="Root" type="Node2D" unique_id=580417392]
 
@@ -29,7 +42,7 @@ tile_set = ExtResource("1_l45s6")
 target = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1259294435 instance=ExtResource("3_c0h7r")]
-position = Vector2(-128, -30)
+position = Vector2(41, 20)
 
 [node name="DungeonEntrance" type="Node2D" parent="." unique_id=767402261]
 position = Vector2(-128, -74)
@@ -58,3 +71,21 @@ prompt = "Talk to Wizard"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueNPC/Interactable" unique_id=1790470873]
 shape = SubResource("CircleShape2D_gvo7x")
+
+[node name="ShopNPC" type="Node2D" parent="." unique_id=1881343969]
+script = ExtResource("9_c0h7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopNPC" unique_id=483706340]
+texture = ExtResource("9_auytq")
+
+[node name="Interactable" type="Area2D" parent="ShopNPC" unique_id=1065468716]
+script = ExtResource("4_s368d")
+prompt = "Shop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopNPC/Interactable" unique_id=1900850890]
+shape = SubResource("CircleShape2D_8ogur")
+
+[node name="Shop" type="Node" parent="ShopNPC" unique_id=1205176559]
+script = ExtResource("11_46gqp")
+items = Array[ExtResource("12_8k6i5")]([ExtResource("13_dlnb1"), ExtResource("14_0imqq"), ExtResource("15_8ho5u"), ExtResource("16_e8ubm"), ExtResource("17_ci6rn"), ExtResource("18_2brhu")])
+metadata/_custom_type_script = "uid://cdbyxyi2yiax2"

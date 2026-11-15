@@ -10,4 +10,5 @@ display_name = "Shield"
 description = "Blocks incoming damage"
 icon = ExtResource("2_uevwl")
 equip_scene = ExtResource("1_ybfus")
+base_price = 10
 metadata/_custom_type_script = "uid://ci3mhp2uvwruc"

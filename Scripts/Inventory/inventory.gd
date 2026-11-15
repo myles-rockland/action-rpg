@@ -55,8 +55,8 @@ func remove_item_from_slot(slot : ItemSlot):
 	else:
 		slot.quantity -= 1
 		
-	inventory_updated.emit()
 	slot_updated.emit()
+	inventory_updated.emit()
 	
 func get_item_slot(item : ItemData) -> ItemSlot:
 	for slot in item_slots:

@@ -10,4 +10,5 @@ display_name = "Bow"
 description = "Fires arrows"
 icon = ExtResource("2_dvb4d")
 equip_scene = ExtResource("1_oaqnt")
+base_price = 10
 metadata/_custom_type_script = "uid://bueaijd8b5tik"

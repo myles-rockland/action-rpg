@@ -6,6 +6,7 @@ signal gold_updated(gold : int)
 @onready var inventory : Inventory = $Inventory
 @onready var dialogue_controller : DialogueController = $DialogueController
 var interaction_controller : InteractionController
+@onready var shop_ui : ShopUI = $HUD/ShopScreen
 
 var current_gold  : int = 0
 
@@ -26,7 +27,7 @@ func _process(delta):
 	look_direction = global_position.direction_to(mouse_pos)
 
 func _die():
-	get_tree().reload_current_scene()
+	GameManager.game_over()
 
 func toggle_usability(toggle : bool):
 	can_move = toggle

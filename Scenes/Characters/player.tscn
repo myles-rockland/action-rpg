@@ -10,8 +10,9 @@
 [ext_resource type="Script" uid="uid://d12o5n8h2yf3w" path="res://Scripts/Inventory/inventory.gd" id="9_xo8ps"]
 [ext_resource type="Script" uid="uid://y5osth0bl7j1" path="res://Scripts/Items/item_data.gd" id="10_xccyk"]
 [ext_resource type="Script" uid="uid://cjqu5xh7k4wb0" path="res://Scripts/Dialogue/dialogue_controller.gd" id="12_h1n2f"]
+[ext_resource type="Resource" uid="uid://b5i24asj5dg70" path="res://Items/Weapons/shield.tres" id="13_15c3i"]
 [ext_resource type="Texture2D" uid="uid://ryo8ejfhg2w4" path="res://Sprites/Characters/Character_Wizard.tres" id="14_xccyk"]
-[ext_resource type="Resource" uid="uid://d0eeqwbbr3t3l" path="res://Items/Weapons/sword.tres" id="14_yt1oc"]
+[ext_resource type="Script" uid="uid://eiewb0ktj2as" path="res://Scripts/UI/shop_ui.gd" id="15_jnx77"]
 [ext_resource type="PackedScene" uid="uid://m5vgg54mirv3" path="res://Scenes/UI/shop_item_ui.tscn" id="15_yt1oc"]
 [ext_resource type="Texture2D" uid="uid://bshdye34yp8m3" path="res://Sprites/UI/UI_Gold.tres" id="16_15c3i"]
 [ext_resource type="Resource" uid="uid://cejbcqoel730q" path="res://Items/Consumables/health_potion.tres" id="16_dxpk4"]
@@ -122,7 +123,7 @@ autostart = true
 [node name="Inventory" type="Node" parent="." unique_id=1471694993]
 script = ExtResource("9_xo8ps")
 start_items = Dictionary[ExtResource("10_xccyk"), int]({
-ExtResource("14_yt1oc"): 1,
+ExtResource("13_15c3i"): 1,
 ExtResource("16_dxpk4"): 1
 })
 
@@ -234,12 +235,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShopScreen" type="Panel" parent="HUD" unique_id=907860443]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_01b8d")
+script = ExtResource("15_jnx77")
 
 [node name="ShopPanel" type="Panel" parent="HUD/ShopScreen" unique_id=775630614]
 layout_mode = 1
@@ -280,6 +283,54 @@ offset_right = -15.0
 offset_bottom = -21.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_134ml")
 
+[node name="PlayerItems" type="VBoxContainer" parent="HUD/ShopScreen/ShopPanel/PlayerPanel" unique_id=1152898650]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = -3.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopItemUI" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=512931858 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI2" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=119016772 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI3" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=1722093095 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI4" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=1629977147 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI5" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=46957597 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI6" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=1239692065 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI7" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=775862873 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI8" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=622518951 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
+[node name="ShopItemUI9" parent="HUD/ShopScreen/ShopPanel/PlayerPanel/PlayerItems" unique_id=2043664050 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+selling = true
+
 [node name="ShopPanel" type="Panel" parent="HUD/ShopScreen/ShopPanel" unique_id=381019667]
 layout_mode = 1
 anchors_preset = -1
@@ -291,6 +342,45 @@ offset_top = 49.0
 offset_right = -25.0
 offset_bottom = -21.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_134ml")
+
+[node name="ShopItems" type="VBoxContainer" parent="HUD/ShopScreen/ShopPanel/ShopPanel" unique_id=1412424525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = -3.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopItemUI" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=86134397 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI2" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=2087943927 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI3" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=666215148 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI4" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=841778767 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI5" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=1035587938 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI6" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=858589392 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI7" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=369399364 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI8" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=460428709 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
+
+[node name="ShopItemUI9" parent="HUD/ShopScreen/ShopPanel/ShopPanel/ShopItems" unique_id=492318581 instance=ExtResource("15_yt1oc")]
+layout_mode = 2
 
 [node name="SellText" type="Label" parent="HUD/ShopScreen/ShopPanel" unique_id=856032143]
 layout_mode = 1
@@ -319,13 +409,6 @@ text = "Buy"
 label_settings = SubResource("LabelSettings_8ogur")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ShopItemUI" parent="HUD/ShopScreen/ShopPanel" unique_id=512931858 instance=ExtResource("15_yt1oc")]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 60.0
-offset_right = 238.0
-offset_bottom = 104.0
 
 [node name="Gold" type="Control" parent="HUD" unique_id=910615257]
 layout_mode = 3
